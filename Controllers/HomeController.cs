@@ -14,7 +14,11 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
-    {
-        return View();
+    {  
+        Biblioteca.Inicializarbiblioteca();
+        Dictionary<int, Disco>biblioteca = new Dictionary<int, Disco>();
+        biblioteca = Biblioteca.DevolverDiccionario();
+        return View();   
     }
+    
 }
